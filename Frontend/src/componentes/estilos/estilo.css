@@ -1,0 +1,152 @@
+*{
+  box-sizing:border-box;
+}
+
+/* Aca le doy estilo al componente main */
+.cuerpo{
+  margin-top: 20%;
+  margin-bottom: 15%;
+}
+
+.App {
+  text-align: center;
+  align-items: center;
+  margin-top: 10%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+.App-logo {
+  /* height: 40vmin; */
+  width: 40%;
+}
+
+.App-header{
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  margin-top: -20%;
+}
+
+.App-links{
+  margin-top: 10%;
+}
+
+.App-login {
+  text-align: left;
+  /* margin-left: 0%; */
+}
+.App-createAccount {
+  text-align: right;
+}
+
+.App-title{
+  width: 100%;
+  justify-content: center;
+}
+
+.Create-Account, .Login {
+  margin-top: 15%;
+}
+
+.textRight{
+  position: absolute;
+  right: 15%;
+  text-align: right;
+}
+.textLeft{
+  position: absolute;
+  left: 15%;
+  text-align: left;
+}
+
+.img-Home{
+  width: 10%;
+  margin-top: 10%;
+  margin-right: 30px;
+  margin-bottom: 0px;  
+}
+
+/* Para darle estilo al formulario de registrarse  */
+.formulario{
+  background: white;
+  margin-top: 150px;
+  padding: 3px;
+  border:1px solid #000;
+}
+
+.contenedor{
+  width: 100%;
+  padding: 15px;
+}
+/*Edito el titulo de registrarse */
+.titulo{
+  text-align: center;
+  color:#1a2537;
+  font-size: 40px;
+}
+
+/* Le aplico estilo a todos los input de los formularios*/
+input[type="text"],
+input[type="password"]{
+  font-size: 20px;
+  width: 80%;
+  padding: 10px;
+  border:none;
+}
+
+.input-contenedor{
+  margin-bottom:15px;
+  border: 1px solid #aaa;
+}
+
+/* Para darle estilos a los iconos de los formularios */
+.icon{
+ min-width: 50px;
+ text-align: center;
+ color:#999; 
+}
+
+/* Para darle estilo al boton del formulario */
+.button{
+  border:none;
+  width: 100%;
+  color: white;
+  font-size: 20px;
+  background: #1a2537;
+  padding: 15px 20px;
+  border-radius: 5px;
+}
+
+.button:hover{
+  cursor: pointer;
+  background: cadetblue;
+}
+
+/* Le voy a dar estilo a los formularios */
+.text-formulario{
+  text-align: center;
+}
+
+.link{
+  text-decoration: none;
+  color: red;
+  font-weight: 600px;
+}
+
+.link:hover{
+  color:cadetblue;
+}
+
+/* Para que se adapte a cualquier dispositivo */
+@media(min-width:768px){
+  .formulario{
+    margin:auto;
+    width: 500px;
+    margin-top:150px;
+    border-radius: 2%;
+  }
+}
