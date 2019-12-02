@@ -10,7 +10,7 @@ class Header extends React.Component{
     render() {
         return(
             //Utilizo JSX para armar la interfaz de usuario del componente header
-            <img src={MYtinerary} className="App-title"  />
+            <img src={MYtinerary} alt='Imagen header' className="App-title"  />
         );
     }
 }
