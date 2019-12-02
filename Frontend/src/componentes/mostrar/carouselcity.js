@@ -13,8 +13,26 @@ import ciudad_10 from '../img/10-Acapulco.jpg';
 import ciudad_11 from '../img/11- EEUU.jpg';
 import ciudad_12 from '../img/12-Canada.jpg';
 import { Carousel } from 'react-responsive-carousel';
-
+import axios from 'axios';
 class CarouselCity  extends React.Component {
+
+    state = {
+        city:[]
+    }
+
+    //Este metodo ayuda para pedir los datos de la base de datos
+    //Para mostrarlo en el frontend
+    async componentDidMount(){
+        //La direccion en donde quiero que haga la peticion
+        const rest = await axios.get('http://localhost:5000/cities');
+        this.setState({city: rest.data});   
+        console.log(this.state.city);     
+        //console.log(rest);
+
+    }
+
+
+
     render() {
         return (
             <div className="Section-Cities">
