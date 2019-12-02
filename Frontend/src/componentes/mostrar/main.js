@@ -13,7 +13,7 @@ class Main extends React.Component{
                 Comience a navegar
                 </h2>
                 <Link to={'./ciudades'}>
-                <img src={logo} className="App-logo" />
+                <img src={logo} alt='Imagen Flecha' className="App-logo" />
                 </Link>
             </div>
         );
