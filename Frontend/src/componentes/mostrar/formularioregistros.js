@@ -30,7 +30,6 @@ class FormularioRegistros extends React.Component {
 
                         <input type="submit" value="Registrate" className="button"/>
 
-                        <p className="text-formulario" >Al registrarte, aceptas muestras condiciones de uso y politica de privacidad</p>
                         <p className="text-formulario">¿Ya tienes una cuenta? 
                         <Link className="link" to={'./login'}> Iniciar sesión </Link></p>
 
