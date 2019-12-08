@@ -18,93 +18,103 @@ import axios from 'axios';
 class CarouselCity extends React.Component {
 
     state = {
-        city: [],
-        cityName: ''
+        pais: '',
+        city: []
     }
 
     //Este metodo ayuda para pedir los datos de la base de datos
     //Para mostrarlo en el frontend
     async componentDidMount() {
         //La direccion en donde quiero que haga la peticion
+        //const res = await axios.get('http://localhost:5000/cities');
+        //this.setState({ city: res.data });
+        //console.log(res);
+        //console.log(this.setState({ city: res.data }));
         this.getCiudades();
         console.log(this.state.city);
         //console.log(rest);
     }
 
-    getCiudades = async () =>{
-        const rest = await axios.get('http://localhost:5000/cities');
-        this.setState({ city: rest.data });
-    }
 
-    onChangeCityname = (e) =>{
+    getCiudades = async () => {
+        const res = await axios.get('http://localhost:5000/cities');
+        this.setState({
+            city: res.data
+        });
+        console.log(res);
+        console.log(res.data);
+    }
+    onChangeCityname = e => {
         //console.log(e.target.value);
         this.setState({
-            cityName: e.target.value
+            pais: e.target.value
         })
     }
-
-    onSubmit = async e =>{
-        
-        const res = await axios.post('http://localhost:5000/cities', {
-            cityName:this.state.cityName
-        })
-  //      this.setState({
-    //        cityName:''
-      //  })
-//        this.getCiudades();
-        console.log(res);
+    onSubmit = async (e) => {
         e.preventDefault();
-
-    }
-    
-    deleteCity = async (id)=>{
-        console.log(id);
-        await axios.delete('http://localhost:5000/cities/ ' + id);
+        await axios.post('http://localhost:5000/cities', {
+            pais: this.state.pais
+        });
+        this.setState({ pais: '' });
         this.getCiudades();
     }
+
+    /*   onSubmit = async (e) =>{
+           
+           await axios.post('http://localhost:5000/cities', {
+               cityname: this.state.cityname
+           })
+     //      this.setState({
+       //        cityName:''
+         //  })
+   //        this.getCiudades();
+          // console.log(res);
+           e.preventDefault();
+   
+       }
+   */
+    /* deleteCity = async (id)=>{
+         console.log(id);
+         await axios.delete('http://localhost:5000/cities/ ' + id);
+         this.getCiudades();
+     }*/
+
+    deleteCity = async (userId) => {
+        const response = window.confirm('are you sure you want to delete it?');
+        if (response) {
+            await axios.delete('http://localhost:5000/cities/ ' + userId);
+            this.getCiudades();
+        }
+    }
+
 
     render() {
         return (
             <div>
-                <div className="row">
-                    <div className="col-md-4">
-                        <div className="card card-body">
-                            <h3>Agregua una ciudad</h3>
-                            <form onSubmit={this.onSubmit}>
-                                <div className="form-group">
-                                    <input 
-                                        type="text" 
-                                        className="form-control" 
-                                        value={this.state.cityName}
-                                        onChange={this.onChangeCityname}
-                                     />
-                                </div>
-                                <button type="submit" className="btn btn-primary">
-                                    Guardar
-                                </button>
 
-                            </form>
-                        </div>
-                    </div>
-                    
-                    <div className="col-md-8">
-                        <ul className="list-group">
-                            {
-                                //Aca estoy recorriendo a cada una de las ciudades y por cada una tengo una id distinta
-                                this.state.city.map(ciudad => 
-                                    (<li 
-                                        className="list-group-item list-group-item-action" 
-                                        key={ciudad._id}
-                                        onDoubleClick={()=>this.deleteCity(ciudad._id)}
-                                    >
-                                            {ciudad.pais}
-                                    </li>)
-                                )
-                            }
-                        </ul>
-                    </div>
+                <h1>Ciudades</h1>
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Pais</th>
+                            <th scope="col">Eliminar</th>
 
-                </div>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.city.map((lugar) => (
+                            <tr key={lugar._id}>
+                                <td>{lugar._id}</td>
+                                <td>{lugar.pais}</td>
+                                <td>{lugar.ciudad}</td>
+                                <td></td>
+                            </tr>
+                        ))}
+                    </tbody>
+                </table>
+
 
 
                 <div className="Section-Cities">
