@@ -23,7 +23,7 @@ _Las herramientas que utilice para crear la app son:_
 * [React](https://es.reactjs.org/) - El framework web para crear interfaz de usuario
 * [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Servicio de base de datos en la nube
 * [Concurrently](https://www.npmjs.com/package/concurrently) - Para poder levantar tanto el Frontend como el Backend
-* [Nodemon](https://www.npmjs.com/package/nodemon) - Utilice nodemon para poder guardar los cambios y que se reinicie la actualización
+* [Nodemon](https://www.npmjs.com/package/nodemon) - Utilice nodemon para poder guardar los cambios y que se reinicie automaticamente
 
 
 ### Autor ✒️
