@@ -20,10 +20,14 @@ npm run dev
 ### Construido con 🛠️
 _Las herramientas que utilice para crear la app son:_
 
-* [React](https://es.reactjs.org/) - El framework web para crear interfaz de usuario
-* [MongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Servicio de base de datos en la nube
+* [react](https://es.reactjs.org/) - El framework web para crear interfaz de usuario
+* [mongoDB Atlas](https://www.mongodb.com/cloud/atlas) - Servicio de base de datos en la nube
+* [express](https://www.npmjs.com/package/express) - Para crear el servidor y realizar la comunicación entre cliente y servidor
+* [nodemon](https://www.npmjs.com/package/nodemon) - Utilice nodemon para poder guardar los cambios y que se reinicie automaticamente
+* [mongoose](https://www.npmjs.com/package/mongoose) - Para modelar los datos de la base de datos
+* [body-parser](https://www.npmjs.com/package/body-parser) - 
+* [cors](https://www.npmjs.com/package/cors) - 
 * [Concurrently](https://www.npmjs.com/package/concurrently) - Para poder levantar tanto el Frontend como el Backend
-* [Nodemon](https://www.npmjs.com/package/nodemon) - Utilice nodemon para poder guardar los cambios y que se reinicie automaticamente
 
 
 ### Autor ✒️
