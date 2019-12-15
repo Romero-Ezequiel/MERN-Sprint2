@@ -25,7 +25,7 @@ _Las herramientas que utilice para crear la app son:_
 * [express](https://www.npmjs.com/package/express) - Para crear el servidor y realizar la comunicación entre cliente y servidor
 * [nodemon](https://www.npmjs.com/package/nodemon) - Utilice nodemon para poder guardar los cambios y que se reinicie automaticamente
 * [mongoose](https://www.npmjs.com/package/mongoose) - Para modelar los datos de la base de datos
-* [body-parser](https://www.npmjs.com/package/body-parser) - 
+* [body-parser](https://www.npmjs.com/package/body-parser) - Esto nos permite poder parsear el cuerpo de la petición para utilizar los datos
 * [cors](https://www.npmjs.com/package/cors) - 
 * [Concurrently](https://www.npmjs.com/package/concurrently) - Para poder levantar tanto el Frontend como el Backend
 
