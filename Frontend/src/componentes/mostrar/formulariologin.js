@@ -2,6 +2,9 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import '../estilos/estilo.css';
 
+import mensaje from '../img/envelope-solid.svg'; 
+import clave from '../img/key-solid.svg'; 
+
 class SectionLogin extends React.Component{
     render() {
         return(            
@@ -11,15 +14,13 @@ class SectionLogin extends React.Component{
                <div className="contenedor">
 
                    <div className="input-contenedor">
-                       <i className="fas fa-envelope icon">
+                       <img src={mensaje} className="icon" width="20px" height="20px" alt="Mensaje" />
                            <input type="text" placeholder="Correo Electronico"/>
-                       </i>    
                    </div>
 
                    <div className="input-contenedor">
-                       <i className="fas fa-key icon">
+                       <img src={clave} className="icon" width="20px" height="20px" alt="Clave" />
                            <input type="password" placeholder="Contraseña" />
-                       </i>
                    </div>
 
                    <input type="submit" value="Registrate" className="button"/>

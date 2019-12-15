@@ -13,112 +13,16 @@ import ciudad_10 from '../img/10-Acapulco.jpg';
 import ciudad_11 from '../img/11- EEUU.jpg';
 import ciudad_12 from '../img/12-Canada.jpg';
 import { Carousel } from 'react-responsive-carousel';
-//import nombrarCitie from './Cities';
-import axios from 'axios';
+import FiltroCity from './filtrocity';
+
+
 class CarouselCity extends React.Component {
-
-    state = {
-        pais: '',
-        city: []
-    }
-
-    //Este metodo ayuda para pedir los datos de la base de datos
-    //Para mostrarlo en el frontend
-    async componentDidMount() {
-        //La direccion en donde quiero que haga la peticion
-        //const res = await axios.get('http://localhost:5000/cities');
-        //this.setState({ city: res.data });
-        //console.log(res);
-        //console.log(this.setState({ city: res.data }));
-        this.getCiudades();
-        console.log(this.state.city);
-        //console.log(rest);
-    }
-
-
-    getCiudades = async () => {
-        const res = await axios.get('http://localhost:5000/cities');
-        this.setState({
-            city: res.data
-        });
-        console.log(res);
-        console.log(res.data);
-    }
-    onChangeCityname = e => {
-        //console.log(e.target.value);
-        this.setState({
-            pais: e.target.value
-        })
-    }
-    onSubmit = async (e) => {
-        e.preventDefault();
-        await axios.post('http://localhost:5000/cities', {
-            pais: this.state.pais
-        });
-        this.setState({ pais: '' });
-        this.getCiudades();
-    }
-
-    /*   onSubmit = async (e) =>{
-           
-           await axios.post('http://localhost:5000/cities', {
-               cityname: this.state.cityname
-           })
-     //      this.setState({
-       //        cityName:''
-         //  })
-   //        this.getCiudades();
-          // console.log(res);
-           e.preventDefault();
-   
-       }
-   */
-    /* deleteCity = async (id)=>{
-         console.log(id);
-         await axios.delete('http://localhost:5000/cities/ ' + id);
-         this.getCiudades();
-     }*/
-
-    deleteCity = async (userId) => {
-        const response = window.confirm('are you sure you want to delete it?');
-        if (response) {
-            await axios.delete('http://localhost:5000/cities/ ' + userId);
-            this.getCiudades();
-        }
-    }
-
 
     render() {
         return (
             <div>
-
-                <h1>Ciudades</h1>
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">ID</th>
-                            <th scope="col">Nombre</th>
-                            <th scope="col">Pais</th>
-                            <th scope="col">Eliminar</th>
-
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {this.state.city.map((lugar) => (
-                            <tr key={lugar._id}>
-                                <td>{lugar._id}</td>
-                                <td>{lugar.pais}</td>
-                                <td>{lugar.ciudad}</td>
-                                <td></td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-
-
-
+                <FiltroCity />
                 <div className="Section-Cities">
-
                     <Carousel autoPlay>
                         <div>
                             <img src={ciudad_1} alt='Imagen city 1' className="img-fluid" />
